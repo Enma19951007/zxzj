@@ -10,7 +10,6 @@
           <img v-if="activeName=='首页'" alt="Vue logo" src="./assets/logo.png">
           <img v-if="activeName=='首页'" alt="Vue logo" src="./assets/logo.png">
           <img v-if="activeName=='首页'" alt="Vue logo" src="./assets/logo.png">
-          <img v-if="activeName=='首页'" alt="Vue logo" src="./assets/logo.png">
         </div>
       </keep-alive>
       <keep-alive>
