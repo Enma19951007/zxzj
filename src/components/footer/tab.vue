@@ -37,7 +37,7 @@ export default {
   bottom: 0;
   left: 0;
   height: 50px;
-  background: rgb(0, 173, 173);
+  background: #4356b2;
   display: flex;
   width: 100%;
 }

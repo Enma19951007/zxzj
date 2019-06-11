@@ -1,5 +1,5 @@
 <template>
-  <div class="home-container">
+  <div class="container">
       <my-header title="班级"></my-header>
   </div>
 </template>
@@ -14,7 +14,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.home-container {
+.container {
   height: 100%;
   width: 100%;
 }

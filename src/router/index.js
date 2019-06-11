@@ -7,10 +7,14 @@ const router = new Router({
     routes: [
         {
             path: '/',
-            component: () => import('../views/main/index.vue'),
+            component: () => import('../views/index.vue'),
+            children: []
+        },
+        {
+            path: '/speak',
+            component: () => import('../views/home/speak/index.vue'),
             children: []
         }
-    ]
+    ],
 })
-
 export default router

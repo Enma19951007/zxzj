@@ -2,18 +2,10 @@
   <div>
     <!-- 放置容器 -->
     <div class="view-container">
-      <keep-alive>
-        <home-tag v-if="activeName=='首页'">1</home-tag>
-      </keep-alive>
-      <keep-alive>
-        <lab-tag v-if="activeName=='图书馆'">1</lab-tag>
-      </keep-alive>
-      <keep-alive>
-        <class-tag v-if="activeName=='班级'">1</class-tag>
-      </keep-alive>
-      <keep-alive>
-        <user-tag v-if="activeName=='个人中心'">1</user-tag>
-      </keep-alive>
+      <home-tag v-if="activeName=='首页'">1</home-tag>
+      <lab-tag v-if="activeName=='图书馆'">1</lab-tag>
+      <class-tag v-if="activeName=='班级'">1</class-tag>
+      <user-tag v-if="activeName=='个人中心'">1</user-tag>
     </div>
     <tab :activeName="activeName">
       <tab-item @changeTab="changeTab" tabName="首页" :imgUrl="homeImg" :activeUrl="homeImgActive"></tab-item>
@@ -33,13 +25,12 @@ import labImgActive from "@/assets/base/eps2.png";
 import classImgActive from "@/assets/base/eps3.png";
 import userImgActive from "@/assets/base/eps4.png";
 
-
 import tab from "@/components/footer/tab";
 import tabItem from "@/components/footer/tabItem";
-import homeTag from './home'
-import labTag from './lab'
-import classTag from './class'
-import userTag from './user'
+import homeTag from "./home";
+import labTag from "./lab";
+import classTag from "./class";
+import userTag from "./user";
 export default {
   name: "app",
   components: {
@@ -74,7 +65,7 @@ export default {
 <style lang="scss">
 .view-container {
   width: 100vw;
-  height:100vh;
+  height: 100vh;
   background: #2c3e50;
 }
 </style>
