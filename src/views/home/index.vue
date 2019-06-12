@@ -45,16 +45,22 @@
         </div>
         <div class="book-content">
           <div class="book-item">
-            <img src="./../../assets/list1.png">
-            <div class="book-name">Please</div>
+            <div class="img-container">
+              <img src="./../../assets/list1.png">
+              <div class="book-name">Please</div>
+            </div>
           </div>
           <div class="book-item">
-            <img src="./../../assets/list2.png">
-            <div class="book-name">Nice bike</div>
+            <div class="img-container">
+              <img src="./../../assets/list2.png">
+              <div class="book-name">Nice bike</div>
+            </div>
           </div>
           <div class="book-item">
-            <img src="./../../assets/list3.png">
-            <div class="book-name">New plains</div>
+            <div class="img-container">
+              <img src="./../../assets/list3.png">
+              <div class="book-name">New plains</div>
+            </div>
           </div>
         </div>
       </div>
@@ -65,16 +71,22 @@
         </div>
         <div class="book-content">
           <div class="book-item">
-            <img src="./../../assets/list4.png">
-            <div class="book-name">Hello World</div>
+            <div class="img-container">
+              <img src="./../../assets/list4.png">
+              <div class="book-name">Hello World</div>
+            </div>
           </div>
           <div class="book-item">
-            <img src="./../../assets/list5.png">
-            <div class="book-name">Please</div>
+            <div class="img-container">
+              <img src="./../../assets/list5.png">
+              <div class="book-name">Please</div>
+            </div>
           </div>
           <div class="book-item">
-            <img src="./../../assets/list6.png">
-            <div class="book-name">Nice bike</div>
+            <div class="img-container">
+              <img src="./../../assets/list6.png">
+              <div class="book-name">Nice bike</div>
+            </div>
           </div>
         </div>
       </div>
@@ -150,27 +162,30 @@ export default {
     display: flex;
     flex-direction: row;
     height: 170px;
+
     .book-item {
       flex: 1;
-      margin: 20px;
-      border: 1px solid #999;
-      height: 120px;
-      // width: 87px;
-      img {
-        height: 100%;
-        width: 100%;
-        padding: 10px;
-      }
-      .book-name {
-        position: relative;
-        top: -25px;
-        left: -1px;
-        width: 102%;
-        text-align: center;
-        height: 20px;
-        line-height: 20px;
-        background: #a199edc5;
-        color: #ffffff;
+      .img-container {
+        width: 27vw;
+        height: 32vw;
+        margin: 20px auto 0px;
+        border: 1px solid #999;
+        img {
+          height: 100%;
+          width: 100%;
+          padding: 10px;
+        }
+        .book-name {
+          position: relative;
+          top: -25px;
+          left: -1px;
+          width: 102%;
+          text-align: center;
+          height: 20px;
+          line-height: 20px;
+          background: #a199edc5;
+          color: #ffffff;
+        }
       }
     }
   }

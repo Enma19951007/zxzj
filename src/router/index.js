@@ -13,8 +13,19 @@ const router = new Router({
         {
             path: '/speak',
             component: () => import('../views/home/speak/index.vue'),
+            children: [
+            ]
+        },
+        {
+            path: '/speak/speakList',
+            component: () => import('../views/home/speak/speakList.vue'),
             children: []
-        }
+        },
+        {
+            path: '/speak/speakTrain',
+            component: () => import('../views/home/speak/speakTrain.vue'),
+            children: []
+        },
     ],
 })
 export default router

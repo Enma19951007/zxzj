@@ -6,8 +6,9 @@ import iView from 'iview'; // 使用 iview
 import 'iview/dist/styles/iview.css';    // 使用 CSS
 Vue.use(iView);
 // 使用mint ui
-import Mint from 'mint-ui';
-Vue.use(Mint);
+import MintUI from 'mint-ui'
+import 'mint-ui/lib/style.css'
+Vue.use(MintUI);
 
 
 
