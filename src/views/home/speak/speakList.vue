@@ -3,7 +3,7 @@
     <my-header :title="title" isBack></my-header>
     <div style="height:50px;"></div>
     <div @click="gotoPath()">
-      <mt-cell value="未完成 >">
+      <mt-cell value="未完成" is-link>
         <span slot="title">
           <div class="cell-title">
             <div class="cell-icon">口语跟读</div>
@@ -14,7 +14,7 @@
       </mt-cell>
     </div>
     <div @click="gotoPath()">
-      <mt-cell value="未完成 >">
+      <mt-cell value="未完成" is-link>
         <span slot="title">
           <div class="cell-title">
             <div class="cell-icon">口语跟读</div>
@@ -51,7 +51,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .container {
-  height: 100%;
+  height: 100vh;
   width: 100%;
 }
 .cell-icon {
@@ -67,7 +67,7 @@ export default {
   border-radius: 4px;
 }
 .cell-title {
-  margin-top: 5px;
+  margin-top: 10px;
   height: 7vw;
   line-height: 7vw;
   color: #666;

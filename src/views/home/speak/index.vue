@@ -3,7 +3,7 @@
     <my-header title="口语练习" isBack></my-header>
     <div style="height:50px;"></div>
     <div @click="gotoPath('新概念第1课')">
-      <mt-cell value="未完成 >">
+      <mt-cell value="未完成" is-link>
         <span slot="title">
           <div class="cell-title">新概念第1课</div>
           <div class="cell-label">三年级</div>
@@ -11,7 +11,7 @@
       </mt-cell>
     </div>
     <div @click="gotoPath('6.4号预习作业')">
-      <mt-cell value="未完成 >">
+      <mt-cell value="未完成" is-link>
         <span slot="title">
           <div class="cell-title">6.4号预习作业</div>
           <div class="cell-label">三年级</div>
@@ -19,7 +19,7 @@
       </mt-cell>
     </div>
     <div @click="gotoPath('第五单元预习作业')">
-      <mt-cell value="未完成 >">
+      <mt-cell value="未完成" is-link>
         <span slot="title">
           <div class="cell-title">第五单元预习作业</div>
           <div class="cell-label">三年级</div>
@@ -27,7 +27,7 @@
       </mt-cell>
     </div>
     <div @click="gotoPath('85课预习作业')">
-      <mt-cell value="未完成 >">
+      <mt-cell value="未完成" is-link>
         <span slot="title">
           <div class="cell-title">85课预习作业</div>
           <div class="cell-label">三年级</div>
@@ -35,7 +35,7 @@
       </mt-cell>
     </div>
     <div @click="gotoPath('新概念第1课')">
-      <mt-cell value="未完成 >">
+      <mt-cell value="未完成" is-link>
         <span slot="title">
           <div class="cell-title">新概念第1课</div>
           <div class="cell-label">三年级</div>
@@ -43,7 +43,7 @@
       </mt-cell>
     </div>
     <div @click="gotoPath('6.4号预习作业')">
-      <mt-cell value="未完成 >">
+      <mt-cell value="未完成" is-link>
         <span slot="title">
           <div class="cell-title">6.4号预习作业</div>
           <div class="cell-label">三年级</div>
@@ -51,7 +51,7 @@
       </mt-cell>
     </div>
     <div @click="gotoPath('第五单元预习作业')">
-      <mt-cell value="未完成 >">
+      <mt-cell value="未完成" is-link>
         <span slot="title">
           <div class="cell-title">第五单元预习作业</div>
           <div class="cell-label">三年级</div>
@@ -59,7 +59,7 @@
       </mt-cell>
     </div>
     <div @click="gotoPath('85课预习作业')">
-      <mt-cell value="未完成 >">
+      <mt-cell value="未完成" is-link>
         <span slot="title">
           <div class="cell-title">85课预习作业</div>
           <div class="cell-label">三年级</div>
@@ -85,7 +85,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .container {
-  height: 100%;
+  height: 100vh;
   width: 100%;
 }
 .cell-title {

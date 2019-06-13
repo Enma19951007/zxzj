@@ -3,23 +3,23 @@
     <my-header title="在线助教"></my-header>
     <div class="main-container">
       <div style="height:50px;"></div>
-      <Carousel v-model="activeIndex" loop autoplay>
-        <CarouselItem>
+      <van-swipe :autoplay="3000" indicator-color="white">
+        <van-swipe-item>
           <div class="carousel-item-css">
             <img src="./../../assets/swp1.png" style="height:100%;width:100%">
           </div>
-        </CarouselItem>
-        <CarouselItem>
+        </van-swipe-item>
+        <van-swipe-item>
           <div class="carousel-item-css">
             <img src="./../../assets/swp2.png" style="height:100%;width:100%">
           </div>
-        </CarouselItem>
-        <CarouselItem>
+        </van-swipe-item>
+        <van-swipe-item>
           <div class="carousel-item-css">
             <img src="./../../assets/swp3.png" style="height:100%;width:100%">
           </div>
-        </CarouselItem>
-      </Carousel>
+        </van-swipe-item>
+      </van-swipe>
       <div class="app-container">
         <div class="app-item-container">
           <div class="app-item" style="background:#4cbfff" @click="gotoRouter('/speak')"></div>
@@ -102,9 +102,7 @@ export default {
     myHeader
   },
   data() {
-    return {
-      activeIndex: 0
-    };
+    return {};
   },
   methods: {
     gotoRouter(path) {
@@ -115,7 +113,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .container {
-  height: 100%;
+  height: 100vh;
   width: 100%;
   // display: flex;
   // flex-direction: column;
@@ -126,7 +124,7 @@ export default {
   overflow-y: scroll;
 }
 .carousel-item-css {
-  height: 160px;
+  height: 180px;
 }
 .app-container {
   height: 80px;

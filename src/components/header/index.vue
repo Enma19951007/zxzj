@@ -1,6 +1,6 @@
 <template>
     <div class="header-container">
-      <span class="title-back" v-if="isBack" @click="goBack()">Back</span>
+      <span class="title-back" v-if="isBack" @click="goBack()"><van-icon name="arrow-left" /></span>
       <span class="title-CSS">{{title}}</span>
     </div>
 </template>
@@ -38,12 +38,13 @@ export default {
 }
 .title-back {
   display: inline-block;
-  margin-left: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
   font-size: 14px;
   height: 48px;
   line-height: 48px;
 }
 .title-CSS {
-  margin-left: 25px;
+  margin-left: 15px;
 }
 </style>
