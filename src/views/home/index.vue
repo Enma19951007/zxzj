@@ -25,7 +25,7 @@
           <div class="app-item" style="background:#4cbfff" @click="gotoRouter('/speak')"></div>
         </div>
         <div class="app-item-container">
-          <div class="app-item" style="background:#609afe"></div>
+          <div class="app-item" style="background:#609afe" @click="gotoRouter('/word')"></div>
         </div>
         <div class="app-item-container">
           <div class="app-item" style="background:#9b98ff"></div>

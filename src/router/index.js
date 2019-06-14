@@ -26,6 +26,18 @@ const router = new Router({
             component: () => import('../views/home/speak/speakTrain.vue'),
             children: []
         },
+        {
+            path: '/word',
+            component: () => import('../views/home/word/index.vue'),
+            children: [
+            ]
+        },
+        {
+            path: '/word/wordTrain',
+            component: () => import('../views/home/word/wordTrain.vue'),
+            children: [
+            ]
+        }
     ],
 })
 export default router
