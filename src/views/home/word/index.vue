@@ -4,21 +4,21 @@
     <div style="height:50px;"></div>
     <div class="main-container">
       <div class="main-title">已学单词总数</div>
-      <div class="main-number">10</div>
+      <div class="main-number">{{count}}</div>
       <div class="main-item">
-        <div class="item">
+        <div class="item" @click="gotoPath('/word/wordRank')">
           <div class="item-box"></div>
           <div class="item-title">排行榜</div>
         </div>
-        <div class="item">
+        <div class="item" @click="gotoPath('/word/wordMy')">
           <div class="item-box"></div>
           <div class="item-title">我的单词</div>
         </div>
-        <div class="item">
+        <div class="item" @click="toastMsg()">
           <div class="item-box"></div>
           <div class="item-title">读书进度</div>
         </div>
-        <div class="item">
+        <div class="item" @click="toastMsg()">
           <div class="item-box"></div>
           <div class="item-title">单词测试</div>
         </div>
@@ -41,9 +41,29 @@ export default {
   components: {
     myHeader
   },
+  data() {
+    return {
+      count: 0
+    };
+  },
+  mounted() {
+    this.count = this.getCount(this.$store.state.myWord.wordList);
+  },
   methods: {
-    gotoPath(value){
-      this.$router.push(value)
+    gotoPath(value) {
+      this.$router.push(value);
+    },
+    toastMsg() {
+      this.$toast("即将上线,敬请期待");
+    },
+    getCount(wordList) {
+      let count = 0;
+      for (let index in wordList) {
+        if (wordList[index].isLearn) {
+          count = count + 1;
+        }
+      }
+      return count;
     }
   }
 };
@@ -95,11 +115,11 @@ export default {
 }
 .button-container {
   height: 30vh;
-  .button-title{
+  .button-title {
     color: #bdbdbd;
     text-align: center;
-    margin-top:5vh;
-    height:10vh;
+    margin-top: 5vh;
+    height: 10vh;
     line-height: 10vh;
     font-size: 20px;
   }
@@ -111,11 +131,11 @@ export default {
     margin: 0 auto;
     text-align: center;
     box-shadow: 0px 0px 5px #999;
-    .button-text{
+    .button-text {
       color: #fff;
       font-size: 20px;
       font-weight: 400;
-      height:70px;
+      height: 70px;
       line-height: 70px;
     }
   }

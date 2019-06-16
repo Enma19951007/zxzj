@@ -36,28 +36,7 @@ export default {
   },
   data() {
     return {
-      wordList: [
-        {
-          cn: "n. 男孩；男人",
-          en: "boy"
-        },
-        {
-          cn: "n. 女孩；姑娘，未婚女子",
-          en: "girl"
-        },
-        {
-          cn: "n. 蛋糕；块状物",
-          en: "cake"
-        },
-        {
-          cn: "adj. 红的，红色的",
-          en: "red"
-        },
-        {
-          cn: "n. 苹果，苹果树",
-          en: "apple"
-        }
-      ],
+      wordList: [],
       slideCard: true,
       cnText: null,
       enText: null,
@@ -68,6 +47,7 @@ export default {
     };
   },
   mounted() {
+    this.wordList = this.getWordList(this.$store.state.myWord.wordList);
     this.wordListindex = 0;
     this.changeWord(this.wordListindex);
   },
@@ -76,8 +56,8 @@ export default {
       this.inputText = null;
       this.checkedFalse = false;
       this.checkedTrue = false;
-      this.cnText = this.wordList[index].cn;
-      this.enText = this.wordList[index].en;
+      this.cnText = this.wordList[index].detail;
+      this.enText = this.wordList[index].name;
     },
     checkWord() {
       // 如果没输入内容,直接退出方法
@@ -86,6 +66,7 @@ export default {
       }
       // 判断是否已经答题结束 如果答对,进入一下题目,没答对返回
       if (this.checkedTrue) {
+        this.$store.commit("changeLearn", this.wordList[this.wordListindex].id);
         this.changeWord(++this.wordListindex);
         this.slideCard = false;
         this.$nextTick(() => {
@@ -107,6 +88,15 @@ export default {
       } else {
         this.checkedFalse = true;
       }
+    },
+    getWordList(wordList) {
+      let temArr = [];
+      for (let index in wordList) {
+        if (!wordList[index].isLearn) {
+          temArr.push(wordList[index]);
+        }
+      }
+      return temArr;
     }
   }
 };
@@ -172,11 +162,12 @@ export default {
     transition: background-color 0.3s;
   }
   .button-item {
+    float: right;
+    margin-right: 30px;
     width: 60px;
     height: 60px;
     border-radius: 50%;
     background: #b3b3b3;
-    margin: 0 auto;
     text-align: center;
     box-shadow: 0px 0px 5px #999;
     transition: background-color 0.3s;

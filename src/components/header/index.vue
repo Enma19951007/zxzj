@@ -1,8 +1,15 @@
 <template>
-    <div class="header-container">
-      <span class="title-back" v-if="isBack" @click="goBack()"><van-icon name="arrow-left" /></span>
-      <span class="title-CSS">{{title}}</span>
-    </div>
+  <div class="header-container">
+    <span class="title-back" v-if="isBack" @click="goBack()">
+      <van-icon name="arrow-left"/>
+    </span>
+    <span class="title-CSS" @click="chooseList(isList)">
+      {{title}}
+      <van-icon v-if="isList" size="20px" name="arrow-down"/>
+    </span>
+
+    <van-action-sheet v-model="showList" :actions="actions" @select="onSelect" cancel-text="取消"/>
+  </div>
 </template>
 
 <script>
@@ -13,11 +20,37 @@ export default {
     isBack: {
       type: Boolean,
       default: false
+    },
+    isList: {
+      type: Boolean,
+      default: false
+    },
+    actions: {
+      type: Array,
+      default: function() {
+        return [];
+      }
     }
+  },
+  data() {
+    return {
+      showList: false
+    };
   },
   methods: {
     goBack() {
       this.$router.go(-1);
+    },
+    chooseList(value) {
+      if (value) {
+        this.showList = true;
+      } else {
+        return;
+      }
+    },
+    onSelect(value) {
+      this.$emit("chooseItem", value);
+      this.showList = false;
     }
   }
 };

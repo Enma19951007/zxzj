@@ -13,11 +13,15 @@ Vue.use(MintUI);
 import Vant from 'vant';
 import 'vant/lib/index.css';
 Vue.use(Vant);
-
+//使用vuex
+import Vuex from 'vuex'
+import store from './store'
+Vue.use(Vuex)
 
 Vue.config.productionTip = false
 
 new Vue({
   router,
+  store,
   render: h => h(App),
 }).$mount('#app')

@@ -23,18 +23,23 @@
       <div class="app-container">
         <div class="app-item-container">
           <div class="app-item" style="background:#4cbfff" @click="gotoRouter('/speak')"></div>
+          <div class="app-text">练口语</div>
         </div>
         <div class="app-item-container">
           <div class="app-item" style="background:#609afe" @click="gotoRouter('/word')"></div>
+          <div class="app-text">背单词</div>
         </div>
         <div class="app-item-container">
           <div class="app-item" style="background:#9b98ff"></div>
+          <div class="app-text">做习题</div>
         </div>
         <div class="app-item-container">
           <div class="app-item" style="background:#cd99fd"></div>
+          <div class="app-text">做试卷</div>
         </div>
         <div class="app-item-container">
           <div class="app-item" style="background:#01cafe"></div>
+          <div class="app-text">每日一听</div>
         </div>
       </div>
 
@@ -127,7 +132,7 @@ export default {
   height: 180px;
 }
 .app-container {
-  height: 80px;
+  height: 90px;
   background: #ffffff;
   display: flex;
   flex-direction: row;
@@ -142,6 +147,13 @@ export default {
       height: 50px;
       border-radius: 10px;
       background: red;
+    }
+    .app-text {
+      position: relative;
+      top: 50%;
+      width: 50px;
+      text-align: center;
+      margin: 5px auto 0;
     }
   }
 }
