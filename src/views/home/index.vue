@@ -33,11 +33,11 @@
           <div class="app-item" style="background:#9b98ff"></div>
           <div class="app-text">做习题</div>
         </div>
-        <div class="app-item-container">
+        <div class="app-item-container" @click="toastMsg()">
           <div class="app-item" style="background:#cd99fd"></div>
           <div class="app-text">做试卷</div>
         </div>
-        <div class="app-item-container">
+        <div class="app-item-container" @click="toastMsg()">
           <div class="app-item" style="background:#01cafe"></div>
           <div class="app-text">每日一听</div>
         </div>
@@ -112,7 +112,10 @@ export default {
   methods: {
     gotoRouter(path) {
       this.$router.push(path);
-    }
+    },
+    toastMsg() {
+      this.$toast("即将上线,敬请期待");
+    },
   }
 };
 </script>
