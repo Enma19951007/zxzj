@@ -9,7 +9,7 @@
     <div class="text-container">
       <div class="en-text">{{wordDetail.enText}}</div>
       <div class="ch-text">{{wordDetail.cnText}}</div>
-      <div class="button-item" @click="getNextWord()">
+      <div class="button-item" @click="getNextWord(wordDetail.id)">
         <van-icon class="button-text" name="arrow"/>
       </div>
     </div>
@@ -31,7 +31,7 @@ export default {
   mounted() {
     let wordName = this.$router.currentRoute.query.query;
     this.wordDetail = this.getWord(wordName, this.$store.state.myWord.wordList);
-    this.addStar(this.wordDetail.id)
+    this.addStar(this.wordDetail.id);
   },
   methods: {
     getWord(wordName, wordList) {
@@ -41,11 +41,19 @@ export default {
         }
       }
     },
-    getNextWord() {
-      let nextWordIndex = parseInt(this.wordDetail.id + 1);
+    getNextWord(id) {
+      // 算出下一个要使用的id
+      let nextWordIndex = parseInt(id + 1);
+      // 确保长度在全部单词之内
       if (nextWordIndex < this.$store.state.myWord.wordList.length) {
+        // 判断拿到的单词是否是已学习的,如果不是已学习的,就再次调用这个方法,查找下下个单词.
+        if (!this.$store.state.myWord.wordList[nextWordIndex].isLearn) {
+          // 为什么不用 nextWordIndex  可能有问题 所以没有用
+          this.getNextWord(parseInt(id + 1));
+          return;
+        }
         this.wordDetail = this.$store.state.myWord.wordList[nextWordIndex];
-        this.addStar(this.wordDetail.id)
+        this.addStar(nextWordIndex);
       } else {
         this.$toast("已经是最后一个单词");
       }
