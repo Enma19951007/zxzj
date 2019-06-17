@@ -37,7 +37,6 @@
 
 <script>
 import myHeader from "@/components/header";
-import { setTimeout } from "timers";
 export default {
   name: "speak",
   components: {

@@ -55,6 +55,18 @@ const router = new Router({
             component: () => import('../views/home/word/wordMyWord.vue'),
             children: [
             ]
+        },
+        {
+            path: '/train',
+            component: () => import('../views/home/train'),
+            children: [
+            ]
+        },
+        {
+            path: '/train/wordChoose',
+            component: () => import('../views/home/train/wordChoose'),
+            children: [
+            ]
         }
     ],
 })

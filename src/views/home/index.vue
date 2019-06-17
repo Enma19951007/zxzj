@@ -30,7 +30,7 @@
           <div class="app-text">背单词</div>
         </div>
         <div class="app-item-container">
-          <div class="app-item" style="background:#9b98ff"></div>
+          <div class="app-item" style="background:#9b98ff"  @click="gotoRouter('/train')"></div>
           <div class="app-text">做习题</div>
         </div>
         <div class="app-item-container" @click="toastMsg()">
