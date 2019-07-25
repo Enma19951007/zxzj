@@ -10,9 +10,9 @@
       <div class="main-title" @click="logout()">退出登陆</div>
     </div>
 
-    <div class="card-container">
+    <!-- <div class="card-container">
       <div class='card-item'>欢迎回来，准备开始学习吧！</div>
-    </div>
+    </div> -->
 
     <div class="button-container">
       <div class="main-item">
