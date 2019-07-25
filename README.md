@@ -1,6 +1,9 @@
 # 在线demo
 
-https://enma19951007.github.io/zxzj/#/
+```
+https://enma19951007.github.io/zxzj/dist/#/
+```
+
 
 # myproject
 
