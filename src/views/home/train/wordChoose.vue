@@ -14,9 +14,9 @@
       >{{item.name}}</div>
     </div>
     <div class="button-container">
-      <div class="button-item" :class="{'change-item':isChecked}" @click="nextWord(isChecked)">
+      <!-- <div class="button-item" :class="{'change-item':isChecked}" @click="nextWord(isChecked)">
         <van-icon class="button-text" name="arrow"/>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -64,7 +64,7 @@ export default {
     },
     nextWord(isChecked) {
       if (isChecked) {
-        console.log("a");
+        this.$toast("触发事件，但是未完成");
       }
     },
     chooseItem(event,isChecked) {
@@ -72,7 +72,7 @@ export default {
       if (isChecked) {
         console.log("a");
       } else {
-        // 查看元素是否有chooseId 有就拿出来 ,没有就拉到
+        // 查看元素是否有chooseId 有就拿出来 ,没有就算了
         if (event.target.attributes.chooseId) {
           // 直接将选项先标记为错误,如果正确再进行覆盖
           let userChoose = event.target.attributes.chooseId.value;

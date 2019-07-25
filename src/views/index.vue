@@ -3,14 +3,14 @@
     <!-- 放置容器 -->
     <div class="view-container">
       <home-tag v-if="activeName=='首页'">1</home-tag>
-      <lab-tag v-if="activeName=='图书馆'">1</lab-tag>
-      <class-tag v-if="activeName=='班级'">1</class-tag>
+      <!-- <lab-tag v-if="activeName=='图书馆'">1</lab-tag> -->
+      <!-- <class-tag v-if="activeName=='班级'">1</class-tag> -->
       <user-tag v-if="activeName=='个人中心'">1</user-tag>
     </div>
     <tab :activeName="activeName">
       <tab-item @changeTab="changeTab" tabName="首页" :imgUrl="homeImg" :activeUrl="homeImgActive"></tab-item>
-      <tab-item @changeTab="changeTab" tabName="图书馆" :imgUrl="labImg" :activeUrl="labImgActive"></tab-item>
-      <tab-item @changeTab="changeTab" tabName="班级" :imgUrl="classImg" :activeUrl="classImgActive"></tab-item>
+      <!-- <tab-item @changeTab="changeTab" tabName="图书馆" :imgUrl="labImg" :activeUrl="labImgActive"></tab-item> -->
+      <!-- <tab-item @changeTab="changeTab" tabName="班级" :imgUrl="classImg" :activeUrl="classImgActive"></tab-item> -->
       <tab-item @changeTab="changeTab" tabName="个人中心" :imgUrl="userImg" :activeUrl="userImgActive"></tab-item>
     </tab>
   </div>
@@ -57,6 +57,11 @@ export default {
   methods: {
     changeTab(value) {
       this.activeName = value;
+      if (value !== "首页") {
+        if (!sessionStorage.getItem("userName")) {
+          this.$router.push({ path: "user/login" });
+        }
+      }
     }
   }
 };
@@ -66,6 +71,6 @@ export default {
 .view-container {
   width: 100vw;
   height: 100vh;
-  background: #2c3e50;
+  // background: #2c3e50;
 }
 </style>

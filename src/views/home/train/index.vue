@@ -13,7 +13,7 @@
         </span>
       </mt-cell>
     </div>
-    <div @click="gotoPath()">
+    <div @click="gotoPath('/train/wordLink')">
       <mt-cell value="未完成" is-link>
         <span slot="title">
           <div class="cell-label">新概念英语第一册 Lesson13 (引用1)</div>
@@ -24,7 +24,7 @@
         </span>
       </mt-cell>
     </div>
-    <div @click="gotoPath()">
+    <!-- <div @click="gotoPath()">
       <mt-cell value="未完成" is-link>
         <span slot="title">
           <div class="cell-label">新概念英语第一册 Lesson13 (引用1)</div>
@@ -34,8 +34,8 @@
           </div>
         </span>
       </mt-cell>
-    </div>
-    <div @click="gotoPath()">
+    </div> -->
+    <!-- <div @click="gotoPath('train/wordSpell')">
       <mt-cell value="未完成" is-link>
         <span slot="title">
           <div class="cell-label">新概念英语第一册 Lesson13 (引用1)</div>
@@ -45,7 +45,7 @@
           </div>
         </span>
       </mt-cell>
-    </div>
+    </div> -->
   </div>
 </template>
 
